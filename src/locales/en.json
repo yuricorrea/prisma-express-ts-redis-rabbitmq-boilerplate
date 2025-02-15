@@ -13,8 +13,7 @@
     },
     "register": {
       "email_already_exists": "Email already exists",
-      "phone_already_exists": "Phone number already exists",
-      "invalid_referral_code": "Invalid referral code"
+      "phone_already_exists": "Phone number already exists"
     },
     "reset_password": {
       "failed": "Password reset failed"
@@ -22,10 +21,6 @@
     "verify_email": {
       "failed": "Email verification failed"
     }
-  },
-  "project": {
-    "not_found": "Project not found",
-    "not_admin_or_owner": "Not an admin or project owner"
   },
   "user": {
     "not_found": "User not found",

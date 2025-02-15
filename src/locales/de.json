@@ -13,8 +13,7 @@
     },
     "register": {
       "email_already_exists": "Email bereits vorhanden",
-      "phone_already_exists": "Telefonnummer bereits vorhanden",
-      "invalid_referral_code": "Ungültiger Referral-Code"
+      "phone_already_exists": "Telefonnummer bereits vorhanden"
     },
     "reset_password": {
       "failed": "Passwort zurücksetzen fehlgeschlagen"
@@ -22,10 +21,6 @@
     "verify_email": {
       "failed": "Email-Verifikation fehlgeschlagen"
     }
-  },
-  "project": {
-    "not_found": "Projekt nicht gefunden",
-    "not_admin_or_owner": "Sie sind weder Administrator noch Projektbesitzer"
   },
   "user": {
     "not_found": "Benutzer nicht gefunden",

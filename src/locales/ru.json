@@ -13,8 +13,7 @@
     },
     "register": {
       "email_already_exists": "Email уже существует",
-      "phone_already_exists": "Телефон уже существует",
-      "invalid_referral_code": "Неверный код реферала"
+      "phone_already_exists": "Телефон уже существует"
     },
     "reset_password": {
       "failed": "Сброс пароля не выполнен"
@@ -22,10 +21,6 @@
     "verify_email": {
       "failed": "Email не подтвержден"
     }
-  },
-  "project": {
-    "not_found": "Проект не найден",
-    "not_admin_or_owner": "Вы не администратор или владелец проекта"
   },
   "user": {
     "not_found": "Пользователь не найден",

@@ -142,7 +142,7 @@ const updateUserById = async <Key extends keyof User>(
     throw new ApiError(httpStatus.NOT_FOUND, 'User not found');
   }
   if (updateBody.email && (await getUserByEmail(updateBody.email as string))) {
-    throw new ApiError(httpStatus.BAD_REQUEST, 'Email already taken');
+    throw new ApiError(httpStatus.BAD_REQUEST, 'auth.register.email_already_exists');
   }
   const updatedUser = await prisma.user.update({
     where: { id: user.id },
@@ -160,7 +160,7 @@ const updateUserById = async <Key extends keyof User>(
 const deleteUserById = async (userId: number): Promise<User> => {
   const user = await getUserById(userId);
   if (!user) {
-    throw new ApiError(httpStatus.NOT_FOUND, 'User not found');
+    throw new ApiError(httpStatus.NOT_FOUND, 'user.not_found');
   }
   await prisma.user.delete({ where: { id: user.id } });
   return user;

@@ -13,8 +13,7 @@
     },
     "register": {
       "email_already_exists": "邮箱已存在",
-      "phone_already_exists": "手机号已存在",
-      "invalid_referral_code": "无效的推荐码"
+      "phone_already_exists": "手机号已存在"
     },
     "reset_password": {
       "failed": "密码重置失败"
@@ -22,10 +21,6 @@
     "verify_email": {
       "failed": "邮箱验证失败"
     }
-  },
-  "project": {
-    "not_found": "项目未找到",
-    "not_admin_or_owner": "不是管理员或项目所有者"
   },
   "user": {
     "not_found": "用户未找到",

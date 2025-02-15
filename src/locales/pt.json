@@ -13,8 +13,7 @@
     },
     "register": {
       "email_already_exists": "Email já existe",
-      "phone_already_exists": "Telefone já existe",
-      "invalid_referral_code": "Código de afiliado inválido"
+      "phone_already_exists": "Telefone já existe"
     },
     "reset_password": {
       "failed": "Falha ao redefinir a senha"
@@ -22,10 +21,6 @@
     "verify_email": {
       "failed": "Falha na verificação de e-mail"
     }
-  },
-  "project": {
-    "not_found": "Projeto não encontrado",
-    "not_admin_or_owner": "Não é um administrador ou proprietário do projeto"
   },
   "user": {
     "not_found": "Usuário não encontrado",
