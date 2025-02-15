@@ -1,0 +1,40 @@
+{
+  "error": {
+    "400": "Bad Request",
+    "401": "Unauthorized",
+    "403": "Forbidden",
+    "404": "Not Found",
+    "500": "Internal Server Error"
+  },
+  "auth": {
+    "login": {
+      "invalid_credentials": "Incorrect email or password",
+      "user_not_active": "User is not active"
+    },
+    "register": {
+      "email_already_exists": "Email already exists",
+      "phone_already_exists": "Phone number already exists",
+      "invalid_referral_code": "Invalid referral code"
+    },
+    "reset_password": {
+      "failed": "Password reset failed"
+    },
+    "verify_email": {
+      "failed": "Email verification failed"
+    }
+  },
+  "project": {
+    "not_found": "Project not found",
+    "not_admin_or_owner": "Not an admin or project owner"
+  },
+  "user": {
+    "not_found": "User not found",
+    "invalid_role": "Invalid role"
+  },
+  "role": {
+    "cannot_deactivate_owner": "Cannot deactivate owner user"
+  },
+  "search": {
+    "email_not_found": "No users found with this email"
+  }
+}

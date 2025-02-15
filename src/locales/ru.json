@@ -1,0 +1,40 @@
+{
+  "error": {
+    "400": "Неверный запрос",
+    "401": "Неавторизован",
+    "403": "Запрещено",
+    "404": "Не найдено",
+    "500": "Внутренняя ошибка сервера"
+  },
+  "auth": {
+    "login": {
+      "invalid_credentials": "Неверный email или пароль",
+      "user_not_active": "Пользователь не активен"
+    },
+    "register": {
+      "email_already_exists": "Email уже существует",
+      "phone_already_exists": "Телефон уже существует",
+      "invalid_referral_code": "Неверный код реферала"
+    },
+    "reset_password": {
+      "failed": "Сброс пароля не выполнен"
+    },
+    "verify_email": {
+      "failed": "Email не подтвержден"
+    }
+  },
+  "project": {
+    "not_found": "Проект не найден",
+    "not_admin_or_owner": "Вы не администратор или владелец проекта"
+  },
+  "user": {
+    "not_found": "Пользователь не найден",
+    "invalid_role": "Неверная роль"
+  },
+  "role": {
+    "cannot_deactivate_owner": "Вы не можете деактивировать владельца"
+  },
+  "search": {
+    "email_not_found": "Пользователи с этим email не найдены"
+  }
+}

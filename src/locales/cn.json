@@ -1,0 +1,40 @@
+{
+  "error": {
+    "400": "请求错误",
+    "401": "未授权",
+    "403": "禁止访问",
+    "404": "未找到",
+    "500": "服务器错误"
+  },
+  "auth": {
+    "login": {
+      "invalid_credentials": "错误的邮箱或密码",
+      "user_not_active": "用户未激活"
+    },
+    "register": {
+      "email_already_exists": "邮箱已存在",
+      "phone_already_exists": "手机号已存在",
+      "invalid_referral_code": "无效的推荐码"
+    },
+    "reset_password": {
+      "failed": "密码重置失败"
+    },
+    "verify_email": {
+      "failed": "邮箱验证失败"
+    }
+  },
+  "project": {
+    "not_found": "项目未找到",
+    "not_admin_or_owner": "不是管理员或项目所有者"
+  },
+  "user": {
+    "not_found": "用户未找到",
+    "invalid_role": "无效的角色"
+  },
+  "role": {
+    "cannot_deactivate_owner": "无法停用所有者用户"
+  },
+  "search": {
+    "email_not_found": "没有找到与此邮箱相关的用户"
+  }
+}

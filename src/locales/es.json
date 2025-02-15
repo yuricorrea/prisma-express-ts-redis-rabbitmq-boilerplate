@@ -1,0 +1,40 @@
+{
+  "error": {
+    "400": "Solicitud inválida",
+    "401": "No autorizado",
+    "403": "Prohibido",
+    "404": "No encontrado",
+    "500": "Error interno del servidor"
+  },
+  "auth": {
+    "login": {
+      "invalid_credentials": "Correo o contraseña incorrectos",
+      "user_not_active": "El usuario no está activo"
+    },
+    "register": {
+      "email_already_exists": "Correo ya existe",
+      "phone_already_exists": "Teléfono ya existe",
+      "invalid_referral_code": "Código de afiliado inválido"
+    },
+    "reset_password": {
+      "failed": "Error al restablecer la contraseña"
+    },
+    "verify_email": {
+      "failed": "Error al verificar el correo"
+    }
+  },
+  "project": {
+    "not_found": "Proyecto no encontrado",
+    "not_admin_or_owner": "No es un administrador o propietario del proyecto"
+  },
+  "user": {
+    "not_found": "Usuario no encontrado",
+    "invalid_role": "Papel inválido"
+  },
+  "role": {
+    "cannot_deactivate_owner": "No se puede desactivar el usuario propietario"
+  },
+  "search": {
+    "email_not_found": "No se encontraron usuarios con este correo"
+  }
+}
