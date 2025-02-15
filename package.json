@@ -1,9 +1,9 @@
 {
-  "name": "prisma-express-typescript-boilerplate",
-  "version": "1.0.0",
-  "description": "REST API Boilerplate with Node JS, TypeScript, Express and Prisma",
+  "name": "prisma-express-typescript-redis-rabbitmq-boilerplate",
+  "version": "0.1.0",
+  "description": "REST API Boilerplate with Node JS, TypeScript, Express, Prisma, Redis and RabbitMQ",
   "main": "src/index.ts",
-  "repository": "https://github.com/antonio-lazaro/prisma-express-typescript-boilerplate.git",
+  "repository": "https://github.com/yuricorrea/prisma-express-ts-redis-rabbitmq-boilerplate.git",
   "scripts": {
     "start": "yarn build && pm2 start ecosystem.config.json --no-daemon",
     "dev": "cross-env NODE_ENV=development nodemon src/index.ts",
@@ -13,15 +13,18 @@
     "lint:fix": "eslint . --fix",
     "prettier": "prettier --check **/*.ts",
     "prettier:fix": "prettier --write **/*.ts",
+    "db:format": "prisma format",
     "db:push": "prisma db push",
     "db:studio": "prisma studio",
+    "db:migrate": "prisma migrate dev",
     "docker:prod": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up",
     "docker:dev": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up",
     "docker:test": "docker-compose -f docker-compose.yml -f docker-compose.test.yml up",
-    "docker:dev-db:start": "docker-compose -f docker-compose.only-db-dev.yml up -d",
-    "docker:dev-db:stop": "docker-compose -f docker-compose.only-db-dev.yml down",
+    "docker:services:start": "docker-compose -f docker-compose.only-db-dev.yml up -d",
+    "docker:services:stop": "docker-compose -f docker-compose.only-db-dev.yml down",
     "prepare": "husky install",
-    "build": "rimraf build && tsc -p tsconfig.json"
+    "build": "rimraf build && tsc -p tsconfig.json",
+    "postinstall": "prisma generate"
   },
   "keywords": [
     "node",
@@ -43,7 +46,7 @@
     "eslint",
     "prettier"
   ],
-  "author": "Antonio Lázaro",
+  "author": "Yuri Correa",
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
