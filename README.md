@@ -1,6 +1,6 @@
 # RESTful API Node Server Boilerplate
 
-A boilerplate/starter project for quickly building RESTful APIs using [Node.js](https://nodejs.org), [TypeScript](https://www.typescriptlang.org), [Express](https://expressjs.com), and [Prisma](https://www.prisma.io).
+A boilerplate/starter project for quickly building RESTful APIs using [Node.js](https://nodejs.org), [TypeScript](https://www.typescriptlang.org), [Express](https://expressjs.com), [Prisma](https://www.prisma.io), [i18n](https://github.com/i18next/i18next), [Redis](https://redis.io), and [RabbitMQ](https://www.rabbitmq.com).
 
 This project is an adaptation of the project [RESTful API Node Server Boilerplate](https://github.com/hagopj13/node-express-boilerplate) using a [PostgreSQL](https://www.postgresql.org) database with [Prisma](https://www.prisma.io) ORM. Many of the files are just an adaptation to [TypeScript](https://www.typescriptlang.org) from the files of the previously mentioned project.
 
@@ -54,6 +54,7 @@ cp .env.example .env
 - **SQL database**: [PostgreSQL](https://www.postgresql.org) object data modeling using [Prisma](https://www.prisma.io) ORM
 - **RabbitMQ**: message queue using [amqplib](https://github.com/squaremo/amqp.node)
 - **Redis**: in-memory data structure store, used as cache
+- **i18n**: internationalization and localization using [i18n](https://github.com/i18next/i18next)
 - **Authentication and authorization**: using [passport](http://www.passportjs.org)
 - **Validation**: request data validation using [Joi](https://joi.dev)
 - **Logging**: using [winston](https://github.com/winstonjs/winston) and [morgan](https://github.com/expressjs/morgan)
