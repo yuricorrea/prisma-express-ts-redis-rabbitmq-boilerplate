@@ -1,7 +1,7 @@
 {
   "name": "prisma-express-typescript-redis-rabbitmq-boilerplate",
   "version": "0.1.0",
-  "description": "REST API Boilerplate with Node JS, TypeScript, Express, Prisma, Redis and RabbitMQ",
+  "description": "REST API Boilerplate with Node JS, TypeScript, Express, i18n, Prisma, Redis and RabbitMQ",
   "main": "src/index.ts",
   "repository": "https://github.com/yuricorrea/prisma-express-ts-redis-rabbitmq-boilerplate.git",
   "scripts": {

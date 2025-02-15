@@ -9,8 +9,8 @@ This project is an adaptation of the project [RESTful API Node Server Boilerplat
 Clone the repo:
 
 ```bash
-git clone --depth 1 https://github.com/antonio-lazaro/prisma-express-typescript-boilerplate.git
-cd prisma-express-typescript-boilerplate
+git clone --depth 1 https://github.com/yuricorrea/prisma-express-ts-redis-rabbitmq-boilerplate.git
+cd prisma-express-ts-redis-rabbitmq-boilerplate
 npx rimraf ./.git
 ```
 
@@ -52,6 +52,8 @@ cp .env.example .env
 ## Features
 
 - **SQL database**: [PostgreSQL](https://www.postgresql.org) object data modeling using [Prisma](https://www.prisma.io) ORM
+- **RabbitMQ**: message queue using [amqplib](https://github.com/squaremo/amqp.node)
+- **Redis**: in-memory data structure store, used as cache
 - **Authentication and authorization**: using [passport](http://www.passportjs.org)
 - **Validation**: request data validation using [Joi](https://joi.dev)
 - **Logging**: using [winston](https://github.com/winstonjs/winston) and [morgan](https://github.com/expressjs/morgan)
@@ -122,10 +124,10 @@ yarn docker:prod
 yarn docker:test
 
 # run docker container with PostgreSQL db
-yarn docker:dev-db:start
+yarn docker:services:start
 
 # stop docker container with PostgreSQL db
-yarn docker:dev-db:stop
+yarn docker:services:stop
 ```
 
 Linting:
@@ -151,9 +153,13 @@ The environment variables can be found and modified in the `.env` file. They com
 ```bash
 # Port number
 PORT=3000
-
-# URL of the PostgreSQL database
-DATABASE_URL=postgresql://postgres:secret@localhost:5432/mydb?schema=public
+#api
+API_URL=
+# Database and Cache
+DATABASE_URL="postgresql://postgres:secret@localhost:5432/nextoken?schema=public"
+REDIS_URL="redis://localhost:6379"
+RABBITMQ_URL="amqp://guest:guest@localhost"
+CACHE_TIME="60"
 
 # JWT
 # JWT secret key
