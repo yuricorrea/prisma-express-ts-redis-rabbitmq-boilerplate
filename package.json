@@ -1,9 +1,9 @@
 {
-  "name": "prisma-express-typescript-boilerplate",
-  "version": "1.0.0",
-  "description": "REST API Boilerplate with Node JS, TypeScript, Express and Prisma",
+  "name": "prisma-express-typescript-redis-rabbitmq-boilerplate",
+  "version": "0.1.0",
+  "description": "REST API Boilerplate with Node JS, TypeScript, Express, i18n, Prisma, Redis and RabbitMQ",
   "main": "src/index.ts",
-  "repository": "https://github.com/antonio-lazaro/prisma-express-typescript-boilerplate.git",
+  "repository": "https://github.com/yuricorrea/prisma-express-ts-redis-rabbitmq-boilerplate.git",
   "scripts": {
     "start": "yarn build && pm2 start ecosystem.config.json --no-daemon",
     "dev": "cross-env NODE_ENV=development nodemon src/index.ts",
@@ -13,15 +13,18 @@
     "lint:fix": "eslint . --fix",
     "prettier": "prettier --check **/*.ts",
     "prettier:fix": "prettier --write **/*.ts",
+    "db:format": "prisma format",
     "db:push": "prisma db push",
     "db:studio": "prisma studio",
+    "db:migrate": "prisma migrate dev",
     "docker:prod": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up",
     "docker:dev": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up",
     "docker:test": "docker-compose -f docker-compose.yml -f docker-compose.test.yml up",
-    "docker:dev-db:start": "docker-compose -f docker-compose.only-db-dev.yml up -d",
-    "docker:dev-db:stop": "docker-compose -f docker-compose.only-db-dev.yml down",
+    "docker:services:start": "docker-compose -f docker-compose.only-db-dev.yml up -d",
+    "docker:services:stop": "docker-compose -f docker-compose.only-db-dev.yml down",
     "prepare": "husky install",
-    "build": "rimraf build && tsc -p tsconfig.json"
+    "build": "rimraf build && tsc -p tsconfig.json",
+    "postinstall": "prisma generate"
   },
   "keywords": [
     "node",
@@ -43,7 +46,7 @@
     "eslint",
     "prettier"
   ],
-  "author": "Antonio Lázaro",
+  "author": "Yuri Correa",
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
@@ -82,8 +85,12 @@
   },
   "dependencies": {
     "@prisma/client": "^4.7.1",
+    "@types/amqplib": "^0.10.6",
     "@types/bcryptjs": "^2.4.2",
+    "@types/i18n": "^0.13.12",
+    "@types/ioredis": "^5.0.0",
     "@types/nodemailer": "^6.4.7",
+    "amqplib": "^0.10.5",
     "bcryptjs": "^2.4.3",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
@@ -92,6 +99,7 @@
     "express-rate-limit": "^6.7.0",
     "helmet": "^6.0.1",
     "http-status": "^1.5.3",
+    "i18n": "^0.15.1",
     "joi": "^17.7.0",
     "moment": "^2.29.4",
     "morgan": "^1.10.0",
@@ -99,6 +107,7 @@
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.0",
     "pm2": "^5.2.2",
+    "redis": "^4.7.0",
     "winston": "^3.8.2",
     "xss-filters": "^1.2.7"
   }

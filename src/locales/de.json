@@ -1,0 +1,35 @@
+{
+  "error": {
+    "400": "Anfrage ungültig",
+    "401": "Nicht autorisiert",
+    "403": "Verboten",
+    "404": "Nicht gefunden",
+    "500": "Interner Serverfehler"
+  },
+  "auth": {
+    "login": {
+      "invalid_credentials": "Falsche E-Mail oder falsches Passwort",
+      "user_not_active": "Benutzer ist nicht aktiv"
+    },
+    "register": {
+      "email_already_exists": "Email bereits vorhanden",
+      "phone_already_exists": "Telefonnummer bereits vorhanden"
+    },
+    "reset_password": {
+      "failed": "Passwort zurücksetzen fehlgeschlagen"
+    },
+    "verify_email": {
+      "failed": "Email-Verifikation fehlgeschlagen"
+    }
+  },
+  "user": {
+    "not_found": "Benutzer nicht gefunden",
+    "invalid_role": "Ungültige Rolle"
+  },
+  "role": {
+    "cannot_deactivate_owner": "Sie können den Besitzer nicht deaktivieren"
+  },
+  "search": {
+    "email_not_found": "Keine Benutzer mit dieser E-Mail gefunden"
+  }
+}

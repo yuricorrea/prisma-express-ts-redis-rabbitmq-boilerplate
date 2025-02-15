@@ -12,6 +12,7 @@ import { authLimiter } from './middlewares/rateLimiter';
 import routes from './routes/v1';
 import { errorConverter, errorHandler } from './middlewares/error';
 import ApiError from './utils/ApiError';
+import i18n from './middlewares/i18n';
 
 const app = express();
 
@@ -42,6 +43,20 @@ app.options('*', cors());
 // jwt authentication
 app.use(passport.initialize());
 passport.use('jwt', jwtStrategy);
+
+// i18n
+app.use(i18n.init);
+app.use((req, res, next) => {
+  const lang = req.header('Location');
+
+  if (lang && i18n.getLocales().includes(lang)) {
+    req.setLocale(lang);
+  } else {
+    req.setLocale(i18n?.getLocale() || 'en'); // fallback language
+  }
+
+  next();
+});
 
 // limit repeated failed requests to auth endpoints
 if (config.env === 'production') {

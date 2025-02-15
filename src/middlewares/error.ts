@@ -30,7 +30,7 @@ export const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
 
   const response = {
     code: statusCode,
-    message,
+    message: req.__(message),
     ...(config.env === 'development' && { stack: err.stack })
   };
 

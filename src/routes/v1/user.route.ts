@@ -124,22 +124,13 @@ export default router;
  *             schema:
  *               type: object
  *               properties:
- *                 results:
+ *                 data:
  *                   type: array
  *                   items:
  *                     $ref: '#/components/schemas/User'
- *                 page:
- *                   type: integer
- *                   example: 1
- *                 limit:
- *                   type: integer
- *                   example: 10
- *                 totalPages:
- *                   type: integer
- *                   example: 1
- *                 totalResults:
- *                   type: integer
- *                   example: 1
+ *                 hasNextPage:
+ *                   type: boolean
+ *                   example: false
  *       "401":
  *         $ref: '#/components/responses/Unauthorized'
  *       "403":

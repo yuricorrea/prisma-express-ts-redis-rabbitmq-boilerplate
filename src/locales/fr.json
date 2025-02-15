@@ -1,0 +1,35 @@
+{
+  "error": {
+    "400": "Requête invalide",
+    "401": "Non autorisé",
+    "403": "Interdit",
+    "404": "Non trouvé",
+    "500": "Erreur interne du serveur"
+  },
+  "auth": {
+    "login": {
+      "invalid_credentials": "Identifiants incorrects",
+      "user_not_active": "L'utilisateur n'est pas actif"
+    },
+    "register": {
+      "email_already_exists": "Email déjà existante",
+      "phone_already_exists": "Numéro de téléphone déjà existant"
+    },
+    "reset_password": {
+      "failed": "Erreur lors de la réinitialisation du mot de passe"
+    },
+    "verify_email": {
+      "failed": "Erreur lors de la vérification de l'email"
+    }
+  },
+  "user": {
+    "not_found": "Utilisateur non trouvé",
+    "invalid_role": "Rôle invalide"
+  },
+  "role": {
+    "cannot_deactivate_owner": "Vous ne pouvez pas désactiver l'utilisateur propriétaire"
+  },
+  "search": {
+    "email_not_found": "Aucun utilisateur trouvé avec cet email"
+  }
+}

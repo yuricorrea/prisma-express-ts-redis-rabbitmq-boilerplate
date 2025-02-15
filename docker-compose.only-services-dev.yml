@@ -1,0 +1,36 @@
+
+version: '3.8'
+services:
+  db:
+    image: postgres
+    restart: always
+    container_name: postgresdb-boilerplate-dev
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=secret
+    ports:
+      - '5432:5432'
+    volumes: 
+      - db:/var/lib/postgresql/data
+
+  redis:
+    image: redis:latest
+    container_name: redis-boilerplate-dev
+    restart: always
+    ports:
+      - '6379:6379'
+  
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq-boilerplate-dev
+    restart: always
+    ports:
+      - '5672:5672'   # AMQP protocol port
+      - '15672:15672' # Management UI port
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+
+volumes:
+  db:
+    driver: local

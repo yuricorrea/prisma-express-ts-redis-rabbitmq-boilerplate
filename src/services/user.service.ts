@@ -3,6 +3,7 @@ import httpStatus from 'http-status';
 import prisma from '../client';
 import ApiError from '../utils/ApiError';
 import { encryptPassword } from '../utils/encryption';
+import { PaginationResponse } from '../types/response';
 
 /**
  * Create a user
@@ -55,7 +56,7 @@ const queryUsers = async <Key extends keyof User>(
     'createdAt',
     'updatedAt'
   ] as Key[]
-): Promise<Pick<User, Key>[]> => {
+): Promise<PaginationResponse<Pick<User, Key>>> => {
   const page = options.page ?? 1;
   const limit = options.limit ?? 10;
   const sortBy = options.sortBy;
@@ -64,10 +65,15 @@ const queryUsers = async <Key extends keyof User>(
     where: filter,
     select: keys.reduce((obj, k) => ({ ...obj, [k]: true }), {}),
     skip: page * limit,
-    take: limit,
+    take: limit + 1,
     orderBy: sortBy ? { [sortBy]: sortType } : undefined
   });
-  return users as Pick<User, Key>[];
+  const hasNextPage = users.length > limit;
+  const usersData = hasNextPage ? users.slice(0, limit) : users;
+  return {
+    data: usersData as Pick<User, Key>[],
+    hasNextPage
+  };
 };
 
 /**
@@ -136,7 +142,7 @@ const updateUserById = async <Key extends keyof User>(
     throw new ApiError(httpStatus.NOT_FOUND, 'User not found');
   }
   if (updateBody.email && (await getUserByEmail(updateBody.email as string))) {
-    throw new ApiError(httpStatus.BAD_REQUEST, 'Email already taken');
+    throw new ApiError(httpStatus.BAD_REQUEST, 'auth.register.email_already_exists');
   }
   const updatedUser = await prisma.user.update({
     where: { id: user.id },
@@ -154,7 +160,7 @@ const updateUserById = async <Key extends keyof User>(
 const deleteUserById = async (userId: number): Promise<User> => {
   const user = await getUserById(userId);
   if (!user) {
-    throw new ApiError(httpStatus.NOT_FOUND, 'User not found');
+    throw new ApiError(httpStatus.NOT_FOUND, 'user.not_found');
   }
   await prisma.user.delete({ where: { id: user.id } });
   return user;

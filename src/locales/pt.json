@@ -1,0 +1,35 @@
+{
+  "error": {
+    "400": "Solicitação inválida",
+    "401": "Não autorizado",
+    "403": "Proibido",
+    "404": "Não encontrado",
+    "500": "Erro interno do servidor"
+  },
+  "auth": {
+    "login": {
+      "invalid_credentials": "E-mail ou senha inválidos",
+      "user_not_active": "Usuário não está ativo"
+    },
+    "register": {
+      "email_already_exists": "Email já existe",
+      "phone_already_exists": "Telefone já existe"
+    },
+    "reset_password": {
+      "failed": "Falha ao redefinir a senha"
+    },
+    "verify_email": {
+      "failed": "Falha na verificação de e-mail"
+    }
+  },
+  "user": {
+    "not_found": "Usuário não encontrado",
+    "invalid_role": "Papel inválido"
+  },
+  "role": {
+    "cannot_deactivate_owner": "Não é possível desativar o usuário proprietário"
+  },
+  "search": {
+    "email_not_found": "Nenhum usuário encontrado com este email"
+  }
+}
